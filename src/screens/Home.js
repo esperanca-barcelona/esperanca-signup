@@ -22,7 +22,19 @@ const options = [
 	{ date: '2019/11/23', bi: '1first', email: 'email@email.com', phone: '112312' },
 	{ date: '2019/11/24', bi: '2second', email: 'email@email.com', phone: '112312' },
 	{ date: '2019/11/30', bi: '1first', email: 'email@email.com', phone: '112312' },
-	{ date: '2019/12/01', bi: '2second', email: 'email@email.com', phone: '112312' }
+	{ date: '2019/12/01', bi: '2second', email: 'email@email.com', phone: '112312' },
+	{ date: '2019/12/07', bi: '1first', email: 'email@email.com', phone: '112312' },
+	{ date: '2019/12/08', bi: '2second', email: 'email@email.com', phone: '112312' },
+	{ date: '2019/12/14', bi: '1first', email: 'email@email.com', phone: '112312' },
+	{ date: '2019/12/15', bi: '2second', email: 'email@email.com', phone: '112312' },
+	{ date: '2019/12/21', bi: '1first', email: 'email@email.com', phone: '112312' },
+	{ date: '2019/12/22', bi: '2second', email: 'email@email.com', phone: '112312' },
+	{ date: '2019/12/28', bi: '1first', email: 'email@email.com', phone: '112312' },
+	{ date: '2019/12/29', bi: '2second', email: 'email@email.com', phone: '112312' },
+	{ date: '2020/01/04', bi: '1first', email: 'email@email.com', phone: '112312' },
+	{ date: '2020/01/05', bi: '2second', email: 'email@email.com', phone: '112312' },
+	{ date: '2020/01/11', bi: '1first', email: 'email@email.com', phone: '112312' },
+	{ date: '2020/01/12', bi: '2second', email: 'email@email.com', phone: '112312' }
 ];
 
 class Home extends Component {
