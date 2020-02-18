@@ -1,0 +1,50 @@
+service: esperaca-backend
+
+plugins:
+  - serverless-offline
+  # - serverless-pseudo-parameters
+  
+custom:
+  defaultStage: dev
+  stage: ${opt:stage, self:custom.defaultStage}
+  
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: ${self:custom.stage}
+  profile: personal
+  region: eu-west-1
+  timeout: 30
+
+functions:
+  graphql:
+    handler: handler.server
+    events:
+    - http:
+        path: /
+        method: post
+        cors: true
+    - http:
+        path: /admin
+        method: post
+        cors: true
+        # authorizer:
+        #   type: COGNITO_USER_POOLS
+        #   authorizerId:
+        #     Ref: ApiGatewayAdminAuthorizer        
+
+  playground:
+    handler: handler.playground
+    events:
+    - http:
+        path: /
+        method: get
+        cors: true
+        # authorizer:
+        #   type: COGNITO_USER_POOLS
+        #   authorizerId:
+        #     Ref: ApiGatewayAdminAuthorizer
+
+# resources:
+#   - ${file(resources/api-gateway-authorizers.yml)}
+#   - ${file(resources/cognito-admin-pool.yml)}

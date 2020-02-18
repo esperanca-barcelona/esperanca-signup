@@ -1,0 +1,37 @@
+﻿
+type Walk {
+  date: String!
+  location: String!
+  dayOfWeek: String!
+  tasks: [ Task ]!
+}
+
+enum TaskName {
+  WALKERS
+  ROUTE_LEADER
+  EMERGENCY_VOLUNTEER
+  HOST
+  SOUP
+  EGGS
+  TUNA_SANDWICHES
+  CHEESE_SANDWICHES
+  FRUIT
+  COOKIES
+  JUICES
+}
+
+type Task {
+  taskName: TaskName!
+  contacts: [ String ]
+  allowsMultiple: Boolean
+  isAvailable: Boolean
+  instructions: String
+}
+
+type Query {
+  getNextDays: [ Walk ]
+}
+
+type Mutation {
+  setTaskContact(date: String, location: String, taskName: TaskName, contact: String): Boolean
+}
